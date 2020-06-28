@@ -1,4 +1,7 @@
 {
+ID double
+ID j
+;
 INT
 ID s
 ;

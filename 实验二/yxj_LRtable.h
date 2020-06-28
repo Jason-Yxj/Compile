@@ -1,6 +1,8 @@
+#include "smw_project.h" 
+
 //生成LR(1)的分析表的部分 
 namespace yxj_LRtable {
-    using namespace project;
+    using namespace smw_project;
 
     int row, col;                      //row分析表的行数，col分析表的列数 
     string LRtalbe[1005][1005];        //存储LR(1)分析表的结果 
@@ -166,7 +168,7 @@ namespace yxj_LRtable {
 
     //输出项目集和LR(1)的分析表到文件中
     void Print_Pj() {
-        ofstream fout("output.out");//输出到文件output.out 
+        ofstream fout("yxj_result.txt");//输出到文件yxj_result.txt
 		
         fout<<"      CLOSURE"<<endl;
         for(int i=0;i<40;i++) 
@@ -229,10 +231,10 @@ namespace yxj_LRtable {
         fout<<endl<<endl<<endl<<endl;
     }
 
-	//将LR(1)分析表输出到文件LR(1).txt中
+	//将LR(1)分析表输出到文件yxj_LR(1)Table.txt中
     void Print_LR1(){ 
-        ofstream fout("LR(1).txt");
-        fout<<row<<" "<<col<<endl<<endl;
+        ofstream fout("yxj_LR(1)Table.txt");
+        fout<<row<<" "<<col<<endl;;
         for(int i=0;i<row;i++){
             for(int j=0;j<col;j++) {
                 if(LRtalbe[i][j]!="") //判断是否为空 
@@ -251,7 +253,7 @@ namespace yxj_LRtable {
 	}
 
     void main() {
-        project::main();
+        smw_project::main();
         yxj_LR1();
         yxj_Print();
     }

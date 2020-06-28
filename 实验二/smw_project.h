@@ -15,6 +15,28 @@ using namespace std;
 #define all(x) (x).begin(),(x).end()
 typedef pair<string, vector<string>> Production;
 
+#ifndef project2
+#define project2
+struct Project {        //项目集
+    string left;
+    vector<string> right;
+    set<string> expect;
+
+    const bool operator<(const Project &p) const {
+        if (left < p.left) return true;
+        if (left > p.left) return false;
+        if (right < p.right) return true;
+        if (right > p.right) return false;
+        if (expect < p.expect) return true;
+        return false;
+    }
+
+    const bool operator==(const Project &p) const {
+        if (left == p.left && right == p.right && expect == p.expect) return true;
+        return false;
+    }
+};
+
 /*产生项目集族*/
 namespace smw_project {
     /*存储所有的符号*/
@@ -36,7 +58,7 @@ namespace smw_project {
 	    string str1, str2;
         vector<string> vec;
         /*读入Grammar.txt文件*/ 
-        ifstream fin("Grammar.txt");
+        ifstream fin("zzc_Language.txt");
         while (fin >> str1 >> str2) {
             nonterminal_symbol.insert(str1);
             string str3;
@@ -79,8 +101,10 @@ namespace smw_project {
             }
         }
     }
+    
 
     void main() {
         smw_project();
     }
-} 
+}
+#endif
