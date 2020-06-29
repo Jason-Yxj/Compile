@@ -24,7 +24,7 @@ public class toolFunction {
 		else return false;
 	}	
 	public static boolean isDelim(char c) {//ÅÐ¶ÏÊÇ·ñÎª·Ö¸ô·û
-		if(c=='{' || c=='}' || c=='(' || c==')' || c==';' || c=='[' || c==']' || c=='.')
+		if(c=='{' || c=='}' || c=='(' || c==')' || c==';' || c=='[' || c==']' || c=='.' || c==',')
 			return true;
 		else {
 			return false;
