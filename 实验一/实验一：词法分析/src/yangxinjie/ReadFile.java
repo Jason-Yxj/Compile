@@ -21,7 +21,7 @@ public class ReadFile {
 			reader=new InputStreamReader(new FileInputStream(file));
 			int ch;
 			while((ch=reader.read())!=-1) {				
-				if((char)ch!='\r'&&(char)ch!='\n'&&(char)ch!=' ') {//预处理换行、空格				
+				if((char)ch!='\r'&&(char)ch!='\n'&&(char)ch!=' '&&(char)ch!='\t') {//预处理换行、空格				
 					bf[fwd]=(char) ch;//将字符存入缓冲区
 					fwd++;
 					str+=(char)ch;

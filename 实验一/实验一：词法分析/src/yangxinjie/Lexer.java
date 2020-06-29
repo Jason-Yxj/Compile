@@ -9,7 +9,7 @@ public class Lexer {
 	public int state=0;	//状态
 	public String Key[]= {"boolean","byte","char", "double","false","float",
 			"int","long","new","short","true","void","instanceof","break",
-			"case","catch","continue","default","do","else","for","if",
+			"case","catch","continue","default","else","for","if",
 			"return","switch","try"," while","finally","throw","this", 
 			"super","abstract","final","native","private", "protected",
 			"public","static","synchronized","transient","volatile","class",
@@ -128,21 +128,25 @@ public class Lexer {
 			state=10;
 			str+=c;
 			forward++;
+			type="id";
 			while(toolFunction.isLetter(c=bf[forward])||toolFunction.isDigit(c=bf[forward])) {
 				state=10;
 				str+=c;
 				forward++;
+				for (String s : Key) {//判断类别是标识符还是关键字
+					if(str.equals(s)){					
+						type="key";
+						break;
+					}
+					//System.out.print("\nword:  "+word+"  s:  "+s+"  结果："+(word.equals(s)));
+				}
+				if (type=="key") {
+					break;
+				}				
 			}
 			state=11;
 			retract(1);//回退
-			word=str;
-			type="id";
-			for (String s : Key) {//判断类别是标识符还是关键字
-				if(word.equals(s)){
-					type="key";
-				}
-				//System.out.print("\nword:  "+word+"  s:  "+s+"  结果："+(word.equals(s)));
-			}
+			word=str;			
 			forward++;
 			System.out.print("\n<"+word+","+type+">");
 			WriteFile.write("\n<"+word+","+type+">");
@@ -314,11 +318,11 @@ public class Lexer {
         case 28:  start = 31; break;
         case 31:  
         	System.out.print("\n compiler error!");
-        	WriteFile.write("\n<"+word+","+type+">");/*recover();*/  
+        	WriteFile.write("\n compiler error!");/*recover();*/  
         	break;
         default: 
-        	System.out.print("\n compiler error!");
-        	WriteFile.write("\n<"+word+","+type+">"); 
+        	System.out.print("\n compiler error!!");
+        	WriteFile.write("\n compiler error!"); 
         	break;			
 		}
 		return start;
