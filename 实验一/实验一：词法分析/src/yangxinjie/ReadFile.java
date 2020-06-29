@@ -1,4 +1,4 @@
-package yxj;
+package yangxinjie;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -11,19 +11,21 @@ import java.io.Reader;
  * 每次载入不超过1K
  * @yxj*/
 public class ReadFile {
-	public static String fileName="test.txt";
+	public static String fileName="yxj_test.txt";
 	//读取文件中的程序
 	public static void readFile(char[] bf,int fwd) {
 		File file=new File(fileName);
 		Reader reader=null;
+		String str="";
 		try {
 			reader=new InputStreamReader(new FileInputStream(file));
 			int ch;
 			while((ch=reader.read())!=-1) {				
 				if((char)ch!='\r'&&(char)ch!='\n'&&(char)ch!=' ') {//预处理换行、空格				
 					bf[fwd]=(char) ch;//将字符存入缓冲区
-					fwd++;										
-					System.out.print((char)ch);//测试					
+					fwd++;
+					str+=(char)ch;
+					System.out.print((char)ch);//测试
 				}
 				if(bf[fwd]=='~')//每次最多载入1K个字符
 					break;
@@ -33,5 +35,6 @@ public class ReadFile {
 		}catch(Exception e) {
 			e.printStackTrace();  
 		}
+		WriteFile.new_write(str);
 	}
 }

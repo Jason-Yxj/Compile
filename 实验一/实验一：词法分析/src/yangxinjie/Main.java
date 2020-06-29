@@ -1,5 +1,7 @@
-package yxj;
+package yangxinjie;
 
+//Main函数
+//@yxj
 public class Main {	
 	public static void main(String[] args) {
 		char[] bf=new char[2048];//定义双缓冲区

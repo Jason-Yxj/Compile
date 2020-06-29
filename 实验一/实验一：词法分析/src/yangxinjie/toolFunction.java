@@ -1,4 +1,4 @@
-package yxj;
+package yangxinjie;
 
 public class toolFunction {
 	public static boolean isLetter(char c)
@@ -23,4 +23,18 @@ public class toolFunction {
 			return true;
 		else return false;
 	}	
+	public static boolean isDelim(char c) {//ÅÐ¶ÏÊÇ·ñÎª·Ö¸ô·û
+		if(c=='{' || c=='}' || c=='(' || c==')' || c==';' || c=='[' || c==']' || c=='.')
+			return true;
+		else {
+			return false;
+		}
+	}
+	public static boolean isOp(char c) {
+		if(c=='+' || c=='-' || c=='*' || c=='/')
+			return true;
+		else {
+			return false;
+		}
+	}
 }
