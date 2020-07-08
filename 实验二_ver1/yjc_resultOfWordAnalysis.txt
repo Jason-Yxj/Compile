@@ -1,0 +1,29 @@
+{
+INT
+ID s
+;
+INT
+ID i
+;
+ID i
+=
+NUM 1
+;
+ID s
+=
+NUM 1
+;
+IF
+(
+ID i
+==
+NUM 1
+)
+{
+ID s
+=
+NUM 2
+;
+else
+}
+}
