@@ -256,8 +256,9 @@ namespace yjc_translate {
 
     /*查询符号表中的变量值*/
     string searchVariable(string name) {
-        per(i, 0, symbolTable.size()) rep(j, 0, symbolTable[i].size())
-            if (symbolTable[i][j] == name) return name;
+        for(int i=symbolTable.size()-1;i>=0;i++) 
+			for(int j=0;j<symbolTable[i].size();j++)
+            	if (symbolTable[i][j] == name) return name;
         return "unknown";
     }
 
