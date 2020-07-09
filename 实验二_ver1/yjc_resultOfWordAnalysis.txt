@@ -17,13 +17,12 @@ IF
 (
 ID i
 ==
-NUM 1
+NUM 10
 )
 {
 ID s
 =
 NUM 2
 ;
-else
 }
 }

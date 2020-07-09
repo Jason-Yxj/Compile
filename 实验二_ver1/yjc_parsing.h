@@ -2,7 +2,7 @@
 
 #ifndef project
 #define project
-#include "smw_project.h"
+#include "smw_PJSet.h"
 #endif
 
 using namespace std;

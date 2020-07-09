@@ -1,16 +1,5 @@
 program' -> program
-program -> function_definition_list
-program -> decls function_definition_list
-function_definition_list -> function_definition
-function_definition_list -> function_definition function_definition_list
-function_definition -> block
-return_type -> VOID
-return_type -> INT
-function_name -> ID ( )
-function_name -> ID ( parameter_list )
-parameter_list -> parameter_declaration
-parameter_list -> parameter_declaration , parameter_list
-parameter_declaration -> INT ID
+program -> block
 block -> { }
 block -> { decls }
 block -> { stmts }
