@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-	//yxj_LRtable::main(); 
+	//yxj_LRtable::main();
     yjc_parsing::main();
     return 0;
 }

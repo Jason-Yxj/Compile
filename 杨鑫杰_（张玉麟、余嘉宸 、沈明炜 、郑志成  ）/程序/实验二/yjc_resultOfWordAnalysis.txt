@@ -1,7 +1,4 @@
 {
-ID double
-ID j
-;
 INT
 ID s
 ;
@@ -14,34 +11,16 @@ NUM 1
 ;
 ID s
 =
-NUM 1
-;
-WHILE
-(
-ID i
-<
-NUM 10
-)
-{
-ID s
-=
-ID s
-*
-ID i
-;
-ID i
-=
-ID i
-+
 NUM 1
 ;
 IF
 (
 ID i
 ==
-NUM 2
+NUM 10
 )
-ID i
+{
+ID s
 =
 NUM 2
 ;
